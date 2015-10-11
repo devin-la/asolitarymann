@@ -10,13 +10,28 @@ body {
 	margin: 0 auto;
 }
 
+a {
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: .4s all ease;
+}
+
+a:hover {
+	border-color: #fff;
+}
+
 .nav a {
 	font-size: 1.2em;
 	color: #0f0f0b;
 	text-transform: uppercase;
-	text-decoration: none;
 	display: block;
 }
+
+.nav a:hover {
+	border-color: #0f0f0b;
+}
+
+
 .nav {
 	float: right;
 }
@@ -27,17 +42,49 @@ body {
 .top {
 	background: url(/images/top.jpg) top center no-repeat;
 	background-size: contain;
-	height: 400px;
+	height: 50vw;
 	font-family: "futura-pt-condensed", sans-serif;
+	max-height: 600px;
 }
 .syn, .credits {
 	background: #fff;
 	padding: 9em 0 9em 0;
 }
-.trailer {
-	background: #000;
+.about-jeremy-text {
+	padding: 9em 0 9em 0;
 }
-.syn p {
+.trailer {
+	padding: 2em 0 2em 0;
+	background: #000 url(/images/trailer.jpg) top center no-repeat;
+	background-size:cover;
+	text-align: center;
+	height: 450px;
+}
+.trailer .vimeo {
+	width: 100%;
+	height: 400px;
+}
+.trailer .button {
+	color: #fff;
+	font-size: 20em;
+	width: 200px;
+	margin: 0 auto;
+	cursor: pointer;
+	margin-top: .3em;
+}
+.trailer.play .button {
+	display: none;
+}
+.trailer .vimeo {
+	display: none;
+}
+.trailer.play .vimeo {
+	display: block;
+}
+.trailer .video {
+
+}
+.syn p, .about-jeremy-text p {
 	font-size: 1.9em;
 	line-height: 1.7em;
 }
@@ -46,12 +93,25 @@ body {
 	font-size: 1.5em;
 }
 
+.about-loic .left, .about-loic .right {
+	width: 45%
+}
+.about-loic .left p {
+	font-size: 1.5em;
+}
+.about-loic .right p {
+	font-size: 1.2em;
+	color: #626262;
+}
+
+.about-loic img {
+	height: 200px;
+}
+
 .credits .left {
-	float: left;
 	max-width: 440px;
 }
 .credits .right {
-	float: right;
 	max-width: 240px;
 	border: 1px solid black;
 	padding: 1em;
@@ -63,13 +123,15 @@ section {
 }
 
 .gallery .image {
-	background: url(/images/gallery001.jpg) top center no-repeat;
-	background-size: contain;
-	height: 400px;
+
 }
 
 .gallery {
 	background: #000;
+	background: #000 url(/images/gallery001.jpg) top center no-repeat;
+	background-size:cover;
+	height: 80vw;
+	text-align: center;
 }
 
 .divider {
@@ -79,7 +141,7 @@ section {
 .about-jeremy-pic {
 	background: url(/images/jeremy.jpg) top center no-repeat;
 	background-size:cover;
-	height: 100vw;
+	height: 80vw;
 	text-align: center;
 }
 
@@ -91,4 +153,37 @@ section {
 	display: block;
 	position: absolute;
 	margin-top: -.38em;
+}
+
+.links a {
+	color: #fff;
+}
+
+.about-jeremy-text .links {
+	margin-top: 4em;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.paintings {
+	margin-top: 2em;
+}
+
+.paintings img {
+	height: 275px;
+}
+
+.about-loic h2 {
+	font-family: "minion-pro-condensed-subhead",sans-serif;
+	color: #fff;
+	font-weight: bold;
+	font-size: 11.5em;
+	text-align: right;
+	line-height: .7em;
 }
