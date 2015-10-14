@@ -30,7 +30,7 @@ app.controller('main', function($scope, $timeout, $http, $rootScope) {
 	$timeout(function() {
 		$scope.loaded = true;
 	});
-	
+
 	$timeout(function() {
 		$rootScope.naving = false;
 		$rootScope.spynav = false;

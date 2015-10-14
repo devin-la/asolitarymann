@@ -40,9 +40,11 @@ body {
 	font-family: "futura-pt-condensed", sans-serif;
 	max-height: 600px;
 }
+
 .top-credits {
 	padding-bottom: 3em;
 }
+
 .top-credits p {
 	text-align: center;
 	font-family: "futura-pt-condensed", sans-serif;
@@ -51,12 +53,15 @@ body {
 	color: #4b4d44;
 	line-height: 1.3em;
 }
+
 .top-credits .largest {
 	font-size: 1.7em;
 }
+
 .top-credits .larger {
 	font-size: 1.4em;
 }
+
 .top-credits .score {
 	color: #141411;
 }
@@ -64,13 +69,16 @@ body {
 .top-credits h1 {
 	display: none;
 }
+
 .syn, .credits {
 	background: #fff;
 	padding: 9em 0 9em 0;
 }
+
 .about-jeremy-text {
 	padding: 9em 0 9em 0;
 }
+
 .trailer {
 	padding: 2em 0 2em 0;
 	/*
@@ -82,6 +90,7 @@ body {
 .trailer .vimeo {
 	width: 100%;
 }
+
 .trailer .button {
 	color: #fff;
 	font-size: 20em;
@@ -90,15 +99,19 @@ body {
 	cursor: pointer;
 	margin-top: .3em;
 }
+
 .trailer.play .button-wrap {
 	display: none;
 }
+
 .trailer .vimeo {
 	display: none;
 }
+
 .trailer.play .vimeo {
 	display: block;
 }
+
 .syn p, .about-jeremy-text p {
 	font-size: 1.9em;
 	line-height: 1.7em;
@@ -111,14 +124,17 @@ body {
 .about-loic .left, .about-loic .right {
 	width: 49%
 }
+
 .about-loic {
 	background: #fff;
 	padding: 4em 0 4em 0;
 }
+
 .about-loic .about.left p {
 	font-size: 1.5em;
 	line-height: 1.8em;
 }
+
 .about-loic .about.right p {
 	font-size: 1.2em;
 	color: #626262;
@@ -165,7 +181,6 @@ section {
 	/*
 	background: url(/images/jeremy.jpg) top center no-repeat;
 	background-size:cover;
-
 	*/
 	text-align: center;
 }
@@ -266,7 +281,6 @@ b {
 	width: 35em;
 }
 
-
 .credits-flare .dck {
 	background: url(/images/credits-dck.jpg) no-repeat;
 	background-size: contain;
@@ -347,18 +361,12 @@ b {
 	background-size: cover;
 }
 
-
-
-
-
-
-
 @media screen and (min-width: 481px) {
 
 	.ost a:hover {
 		border-bottom: 0;
 	}
-	
+
 	a {
 		text-decoration: none;
 		border-bottom: 1px solid transparent;
@@ -368,7 +376,7 @@ b {
 	a:hover {
 		border-color: #fff;
 	}
-	
+
 	.credits .right {
 		max-width: 240px;
 	}
@@ -380,19 +388,20 @@ b {
 	.gallery {
 		height: 100vw;
 	}
+	
 	.about-jeremy-pic {
 		height: 80vw;
 	}
-	
+
 	.trailer {
 		height: 450px;
 	}
-	
+
 	.nav {
 		float: right;
 		margin-top: 10em;
 	}
-	
+
 	.trailer .vimeo {
 		height: 400px;
 	}
@@ -403,7 +412,6 @@ b {
 		-webkit-column-count: 2;
 		-webkit-column-gap: 2em;
 	}
-
 }
 
 @media screen and (max-width: 480px) {
@@ -437,6 +445,7 @@ b {
 	.about-loic h2, .about-jeremy-pic h2 {
 		font-size: 6.4em;
 	}
+	
 	.about-loic h2 {
 		margin-bottom: .5em;
 		line-height: .9em;
@@ -450,68 +459,70 @@ b {
 		font-size: 1.9em;
 		line-height: 1.7em;
 	}
-	
+
 	.about-loic .links a {
 		font-size: 2.2em;
 		line-height: 1.9em;
 	}
-	
+
 	.about-jeremy-text .links a {
 		font-size: 1.2em;
 		line-height: 1.9em;
 	}
-	
+
 	.syn, .about-loic {
 		padding: 2em 0 2em 0;
 	}
-	
+
 	.credits, .about-jeremy-text {
 		padding: 2em 0 0 0;
 	}
-	
+
 	.paintings img.right  {
 		padding-top: 1.7em;
 	}
-	
+
 	.credits .left {
 		margin-bottom: 4em;
 	}
+	
 	.gallery {
 		height: 100vh;
 	}
+	
 	.about-jeremy-pic {
 		height: 100vh;
 	}
-	
+
 	.credits-flare .dck {
 		margin-top: -8em;
 		margin-left: -2em;
 		border-left: 1em solid #fff;
 		height: 6em;
 	}
-	
+
 	.credits-flare .paint {
 		height: 29em;
 	}
-	
+
 	.credits-flare .asm {
 		height: 7em;
 	}
-	
+
 	.paintings img {
 		height: auto;
 	}
-	
+
 	.nav {
 		text-align: center;
 		margin-top: -11em;
 	}
-	
+
 	.nav li {
 		display: table-cell;
 		width: 16%;
 	}
-	
+
 	.nav ul {
 		text-align: center;
 		width: 100%;
@@ -520,63 +531,63 @@ b {
 
 	li:before {
 		content: " \00a0 ";
-	}	
+	}
+	
 	.nav-pad {
 		height: 6em;
 		background: #000;
 	}
-	
+
 	.nav a {
 		font-size: 2em;
 		text-decoration: none;
 		font-weight: normal;
 		color: #c8c6b1;
 	}
-	
+
 	.top {
 		margin-top: 5em;
 	}
-	
+
 	.hide-mobile {
 		display: none;
 	}
-	
+
 	.top-credits {
 		padding-top: 3em;
 	}
-	
+
 	.trailer .button-wrap {
 		width: 100%;
 		text-align: center;
 		display: table;
 		height: 100%;
 	}
-	
+
 	.trailer .button {
 		font-size: 15em;
 		width: 100%;
-    	margin: 0;
-    	display: table-cell;
+		margin: 0;
+		display: table-cell;
 		vertical-align: middle ;
 		text-align: center;
 	}
-	
+
 	.trailer {
 		height: 60vw;
 		padding: 0;
 	}
-	
+
 	.trailer .vimeo {
 		height: 60vw;
 	}
-	
+
 	.trailer .container {
 		padding: 0;
 		height: 100%;
 	}
-	
+
 	.trailer .video {
 		height: 100%;
 	}
-
 }
