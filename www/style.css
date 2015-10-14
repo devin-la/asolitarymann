@@ -10,10 +10,15 @@ body {
 	margin: 0 auto;
 }
 
+.top .container {
+	max-width: 750px;
+}
+
 .nav a {
 	font-size: 1.8em;
 	color: #0f0f0b;
 	text-transform: uppercase;
+	font-weight: 500;
 }
 
 .nav a:hover {
@@ -23,6 +28,7 @@ body {
 
 .nav {
 	float: right;
+	margin-top: 10em;
 }
 .lightblue {
 	color: #b1ecdf;
@@ -31,9 +37,33 @@ body {
 .top {
 	background: url(/images/top.jpg) top center no-repeat;
 	background-size: contain;
-	height: 50vw;
+	height: 60vw;
 	font-family: "futura-pt-condensed", sans-serif;
 	max-height: 600px;
+}
+.top-credits {
+	padding-bottom: 3em;
+}
+.top-credits p {
+	text-align: center;
+	font-family: "futura-pt-condensed", sans-serif;
+	margin-top: -3em;
+	font-size: 1.6em;
+	color: #4b4d44;
+	line-height: 1.3em;
+}
+.top-credits .largest {
+	font-size: 1.7em;
+}
+.top-credits .larger {
+	font-size: 1.4em;
+}
+.top-credits .score {
+	color: #141411;
+}
+
+.top-credits h1 {
+	display: none;
 }
 .syn, .credits {
 	background: #fff;
@@ -71,9 +101,6 @@ body {
 }
 .trailer.play .vimeo {
 	display: block;
-}
-.trailer .video {
-
 }
 .syn p, .about-jeremy-text p {
 	font-size: 1.9em;
@@ -198,15 +225,11 @@ section {
 }
 
 li:before {
-	content: "- \00a0 ";
+	content: " \00a0 ";
 }
 
 b {
 	font-weight: bold;
-}
-
-.top h1 {
-	display: none;
 }
 
 .top p {
@@ -215,7 +238,7 @@ b {
 
 .loader {
 	background: #c8c6b1;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
@@ -242,28 +265,15 @@ b {
 	background: url(/images/ostbg.jpg) top center no-repeat;
 	background-size:cover;
 	*/
-	min-height: 80vw;
+	min-height: 90vw;
 	text-align: center;
-	padding: 15em;
+	padding: 75em 0 2em 0;
 }
 
 .ost img {
-	width: 40em;
+	width: 35em;
 }
 
-
-.top .container {
-	height: 100%;
-	display: table;
-}
-
-.top .words {
-    display: table-cell;
-    vertical-align: bottom;
-    border: 1px solid #f00;
-    height: 100%;
-    width: 100%;
-}
 
 .credits-flare .dck {
 	background: url(/images/credits-dck.jpg) no-repeat;
@@ -284,6 +294,11 @@ b {
 	background-size: contain;
 	width: 100%;
 	height: 33em;
+}
+
+.about-jeremy-pic .end {
+	width: 100%;
+	display: none;
 }
 
 
