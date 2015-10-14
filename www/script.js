@@ -24,7 +24,7 @@ app.config(function($locationProvider, $routeProvider) {
 	});
 });
 
-app.controller('main', function($scope, $timeout) {
+app.controller('main', function($scope, $timeout, $http) {
 	$timeout(function() {
 		$scope.loaded = true;
 	});
@@ -33,6 +33,22 @@ app.controller('main', function($scope, $timeout) {
 		$(this).addClass('play');
 		$('#vimeo').attr('src','https://player.vimeo.com/video/124823784?autoplay=1'); 
 	});
+
+	var feed = new Instafeed({
+		get: 'tagged',
+		tagName: 'asolitarymann',
+		clientId: 'ff454614590d4e298f6a38fa03e146f0',
+		resolution: 'standard_resolution',
+		mock: true,
+		success: function(data) {
+			$scope.$apply(function() {
+				console.log(data.data);
+				$scope.news = data.data;
+			});
+		}
+	});
+	feed.run();
+
 
 });
 
@@ -49,12 +65,12 @@ app.run(function($rootScope, $location, $anchorScroll, $route) {
 		if ($rootScope.naving) {
 			return;
 		}
-		
+
 		$rootScope.$apply(function() {
 			$rootScope.spynav = true;
 			$location.path('/' + hash).replace();
 		});
-		
+
 		setTimeout(function() {
 			$rootScope.$apply(function() {
 				$rootScope.spynav = false;
@@ -65,7 +81,7 @@ app.run(function($rootScope, $location, $anchorScroll, $route) {
 			return;
 		}
 	});
-	
+
 	$rootScope.$on('$routeChangeStart', function(e, current, next) {
 		$rootScope.naving = true;
 	});

@@ -96,6 +96,26 @@
 					</p>
 				</div>
 			</section>
+			
+			<section class="news" id="news">
+				<div class="container">
+					<div class="feed-cards">
+						<div class="feed-card" ng-repeat="card in news | limitTo: 4">
+							<span class="user">
+								<span class="avatar" style="background-image: url({{card.user.profile_picture}})"></span>
+								<span class="name">{{card.user.username}}</span>
+							</span>
+							<a href="{{card.link}}">
+								<span class="image" style="background-image: url({{card.images.standard_resolution.url}})"></span>
+							</a>
+							<span class="caption">
+								{{card.caption.text}}
+							</span>
+						</div>
+					</div>
+					<div class="divider"></div>
+				</div>
+			</section>
 
 			<section class="gallery" id="gallery">
 				<div class="container">
@@ -307,5 +327,23 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/0.7.3/angular-scroll.min.js"></script>
 	<script src="/parallax.min.js"></script>
+	<script src="/instafeed.min.js"></script>
 	<script src="/script.js"></script>
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 </html>
