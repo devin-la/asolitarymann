@@ -272,13 +272,13 @@ b {
 	background: url(/images/ostbg.jpg) top center no-repeat;
 	background-size:cover;
 	*/
-	min-height: 90vw;
+	min-height: 180vw;
 	text-align: center;
-	padding: 75em 0 2em 0;
+	padding: 215em 0 2em 0;
 }
 
 .ost img {
-	width: 35em;
+	width: 28em;
 }
 
 .credits-flare .dck {
@@ -386,11 +386,11 @@ b {
 		margin-top: -.38em;
 	}
 	.gallery {
-		height: 100vw;
+		height: 200vw;
 	}
-	
+
 	.about-jeremy-pic {
-		height: 80vw;
+		height: 200vw;
 	}
 
 	.trailer {
@@ -445,7 +445,7 @@ b {
 	.about-loic h2, .about-jeremy-pic h2 {
 		font-size: 6.4em;
 	}
-	
+
 	.about-loic h2 {
 		margin-bottom: .5em;
 		line-height: .9em;
@@ -485,11 +485,11 @@ b {
 	.credits .left {
 		margin-bottom: 4em;
 	}
-	
+
 	.gallery {
 		height: 100vh;
 	}
-	
+
 	.about-jeremy-pic {
 		height: 100vh;
 	}
@@ -532,7 +532,7 @@ b {
 	li:before {
 		content: " \00a0 ";
 	}
-	
+
 	.nav-pad {
 		height: 6em;
 		background: #000;
