@@ -251,6 +251,45 @@ b {
 	width: 40em;
 }
 
+
+.top .container {
+	height: 100%;
+	display: table;
+}
+
+.top .words {
+    display: table-cell;
+    vertical-align: bottom;
+    border: 1px solid #f00;
+    height: 100%;
+    width: 100%;
+}
+
+.credits-flare .dck {
+	background: url(/images/credits-dck.jpg) no-repeat;
+	background-size: contain;
+	height: 7em;
+	width: 28.1em;
+	margin-left: -1em;
+	margin-top: -13em;
+}
+.credits-flare .asm {
+	background: url(/images/credits-asm.jpg) no-repeat;
+	background-size: contain;
+	height: 9.7em;
+	width: 100%;
+}
+.credits-flare .paint {
+	background: url(/images/credits-paint.jpg) no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: 33em;
+}
+
+
+
+
+
 @media screen and (min-width: 481px) {
 
 	.ost a:hover {
@@ -360,6 +399,21 @@ b {
 	}
 	.about-jeremy-pic {
 		height: 100vh;
+	}
+	
+	.credits-flare .dck {
+		margin-top: -8em;
+		margin-left: -2em;
+		border-left: 1em solid #fff;
+		height: 6em;
+	}
+	
+	.credits-flare .paint {
+		height: 29em;
+	}
+	
+	.credits-flare .asm {
+		height: 7em;
 	}
 	
 
