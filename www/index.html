@@ -25,15 +25,17 @@
 	<body ng-controller="main" ng-class="{'loaded' : loaded}">
 		<div ng-view></div>
 		
-					<div class="track">
-						<a href="#top" du-scrollspy>Top</a>
-						<a href="#trailer" du-scrollspy>Trailer</a>
-						<a href="#synopsis" du-scrollspy>Synopsis</a>
-						<a href="#news" du-scrollspy>News / Press</a>
-						<a href="#gallery" du-scrollspy>Gallery</a>
-						<a href="#about" du-scrollspy>About</a>
-						<a href="#soundtrack" du-scrollspy>Soundtrack</a>
-					</div>
+		<div class="track">
+			<a href="#top" du-scrollspy>Top</a>
+			<a href="#trailer" du-scrollspy>Trailer</a>
+			<a href="#synopsis" du-scrollspy>Synopsis</a>
+			<a href="#news" du-scrollspy>News / Press</a>
+			<a href="#gallery" du-scrollspy>Gallery</a>
+			<a href="#about" du-scrollspy>About</a>
+			<a href="#soundtrack" du-scrollspy>Soundtrack</a>
+		</div>
+		
+		<div class="nav-pad"></div>
 		
 		
 		<div class="loader"></div>
@@ -44,7 +46,7 @@
 						<ul>
 							<li><a href="/trailer" du-scrollspy>Trailer</a></li>
 							<li><a href="/synopsis" du-scrollspy>Synopsis</a></li>
-							<li><a href="/news" du-scrollspy>News / Press</a></li>
+							<li><a href="/news" du-scrollspy>News<span class="hide-mobile">/ Press</span></a></li>
 							<li><a href="/gallery" du-scrollspy>Gallery</a></li>
 							<li><a href="/about" du-scrollspy>About</a></li>
 							<li><a href="/soundtrack" du-scrollspy>Soundtrack</a></li>

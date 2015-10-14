@@ -25,11 +25,6 @@ body {
 	border-color: #0f0f0b;
 }
 
-
-.nav {
-	float: right;
-	margin-top: 10em;
-}
 .lightblue {
 	color: #b1ecdf;
 }
@@ -79,7 +74,6 @@ body {
 	background-size:cover;
 	*/
 	text-align: center;
-	height: 450px;
 }
 .trailer .vimeo {
 	width: 100%;
@@ -224,10 +218,6 @@ section {
 	margin-bottom: .2em;
 }
 
-li:before {
-	content: " \00a0 ";
-}
-
 b {
 	font-weight: bold;
 }
@@ -335,6 +325,15 @@ b {
 	.about-jeremy-pic {
 		height: 80vw;
 	}
+	
+	.trailer {
+		height: 450px;
+	}
+	
+	.nav {
+		float: right;
+		margin-top: 10em;
+	}
 
 }
 
@@ -431,6 +430,58 @@ b {
 		height: 7em;
 	}
 	
+	.trailer {
+		height: 50vw;
+	}
+	
+	.paintings img {
+		height: auto;
+	}
+	
+	.nav {
+		text-align: center;
+		margin-top: -11em;
+	}
+	
+	.nav li {
+		display: table-cell;
+		width: 16%;
+		box-sizing: border-box;
+	}
+	
+	.nav ul {
+		text-align: center;
+		width: 100%;
+		box-sizing:border-box;
+		
+	}
+
+	li:before {
+		content: " \00a0 ";
+	}	
+	.nav-pad {
+		height: 6em;
+		background: #000;
+	}
+	
+	.nav a {
+		font-size: 2em;
+		text-decoration: none;
+		font-weight: normal;
+		color: #c8c6b1;
+	}
+	
+	.top {
+		margin-top: 5em;
+	}
+	
+	.hide-mobile {
+		display: none;
+	}
+	
+	.top-credits {
+		padding-top: 3em;
+	}
 
 }
 
