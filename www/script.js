@@ -14,6 +14,8 @@ app.config(function($locationProvider, $routeProvider) {
 		template: ''
 	}).when('/about', {
 		template: ''
+	}).when('/credits', {
+		template: ''
 	}).when('/soundtrack', {
 		template: ''
 	}).otherwise({redirectTo: '/'});
