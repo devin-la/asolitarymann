@@ -36,24 +36,17 @@ app.controller('main', function($scope, $timeout) {
 
 });
 
-app.run(function($rootScope, $location, $anchorScroll, $route) {
-
-
-	
+app.run(function($rootScope, $location, $anchorScroll, $route) {	
 	var animateTime = 500;
 
 	$rootScope.$on('duScrollspy:becameActive', function($event, $element, $target){
 		var hash = $element.prop('hash').replace('#','');
-		console.log(hash);
+
 		if (hash == 'top') {
 			hash = '';
 		}
-		
-		
-		
-		
+
 		if ($rootScope.naving) {
-			console.log('end');
 			return;
 		}
 		
@@ -67,29 +60,18 @@ app.run(function($rootScope, $location, $anchorScroll, $route) {
 				$rootScope.spynav = false;
 			});
 		},10);
-		
-		
-		
+
 		if (!window.history || !history.replaceState) {
 			return;
 		}
-		
-		//history.replaceState(null, null, hash);
 	});
 	
 	$rootScope.$on('$routeChangeStart', function(e, current, next) {
 		$rootScope.naving = true;
-		var currentRoute = current.$$route;
-    	var nextRoute = next ? next.$$route : null;
-		console.log(currentRoute, nextRoute, $location.$$path);
-		if (currentRoute.originalPath == '/' && nextRoute) {
-			//$route.reload();
-		}
 	});
 
 	$rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
-		console.debug('success',arguments);
-		
+
 		if ($rootScope.spynav) {
 			$rootScope.naving = false;
 			return;
