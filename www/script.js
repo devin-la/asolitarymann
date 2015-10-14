@@ -24,10 +24,15 @@ app.config(function($locationProvider, $routeProvider) {
 	});
 });
 
-app.controller('main', function($scope, $timeout, $http) {
+app.controller('main', function($scope, $timeout, $http, $rootScope) {
 	$timeout(function() {
 		$scope.loaded = true;
 	});
+	
+	$timeout(function() {
+		$rootScope.naving = false;
+		$rootScope.spynav = false;
+	}, 500);
 
 	$('.trailer').click(function() {
 		$(this).addClass('play');
@@ -38,11 +43,9 @@ app.controller('main', function($scope, $timeout, $http) {
 		get: 'tagged',
 		tagName: 'asolitarymann',
 		clientId: 'ff454614590d4e298f6a38fa03e146f0',
-		resolution: 'standard_resolution',
 		mock: true,
 		success: function(data) {
 			$scope.$apply(function() {
-				console.log(data.data);
 				$scope.news = data.data;
 			});
 		}
@@ -52,7 +55,7 @@ app.controller('main', function($scope, $timeout, $http) {
 
 });
 
-app.run(function($rootScope, $location, $anchorScroll, $route) {	
+app.run(function($rootScope, $location, $anchorScroll, $route, $timeout) {	
 	var animateTime = 500;
 
 	$rootScope.$on('duScrollspy:becameActive', function($event, $element, $target){
@@ -71,10 +74,8 @@ app.run(function($rootScope, $location, $anchorScroll, $route) {
 			$location.path('/' + hash).replace();
 		});
 
-		setTimeout(function() {
-			$rootScope.$apply(function() {
-				$rootScope.spynav = false;
-			});
+		$timeout(function() {
+			$rootScope.spynav = false;
 		},10);
 
 		if (!window.history || !history.replaceState) {
@@ -93,7 +94,7 @@ app.run(function($rootScope, $location, $anchorScroll, $route) {
 			return;
 		}
 
-		setTimeout(function() {
+		$timeout(function() {
 			var hash = $location.$$path.replace('/','');
 			var el = $('#' + hash);
 
@@ -105,7 +106,7 @@ app.run(function($rootScope, $location, $anchorScroll, $route) {
 				scrollTop: el.offset().top
 			}, animateTime);
 
-			setTimeout(function() {
+			$timeout(function() {
 				$rootScope.$apply(function() {
 					$rootScope.naving = false;
 					$rootScope.spynav = false;
