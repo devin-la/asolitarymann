@@ -28,7 +28,6 @@ app.controller('main', function($scope, $timeout) {
 	$timeout(function() {
 		$scope.loaded = true;
 	});
-	
 
 	$('.trailer').click(function() {
 		$(this).addClass('play');
@@ -37,32 +36,85 @@ app.controller('main', function($scope, $timeout) {
 
 });
 
-app.run(function($rootScope, $location, $anchorScroll) {
+app.run(function($rootScope, $location, $anchorScroll, $route) {
 
-	if (!window.history || !history.replaceState) {
-		return;
-	}
+
+	
+	var animateTime = 500;
+
 	$rootScope.$on('duScrollspy:becameActive', function($event, $element, $target){
-		var hash = $element.prop('hash');
+		var hash = $element.prop('hash').replace('#','');
 		console.log(hash);
-		if (hash == '#top') {
+		if (hash == 'top') {
 			hash = '';
 		}
-		history.replaceState(null, null, hash.replace('#',''));
+		
+		
+		
+		
+		if ($rootScope.naving) {
+			console.log('end');
+			return;
+		}
+		
+		$rootScope.$apply(function() {
+			$rootScope.spynav = true;
+			$location.path('/' + hash).replace();
+		});
+		
+		setTimeout(function() {
+			$rootScope.$apply(function() {
+				$rootScope.spynav = false;
+			});
+		},10);
+		
+		
+		
+		if (!window.history || !history.replaceState) {
+			return;
+		}
+		
+		//history.replaceState(null, null, hash);
+	});
+	
+	$rootScope.$on('$routeChangeStart', function(e, current, next) {
+		$rootScope.naving = true;
+		var currentRoute = current.$$route;
+    	var nextRoute = next ? next.$$route : null;
+		console.log(currentRoute, nextRoute, $location.$$path);
+		if (currentRoute.originalPath == '/' && nextRoute) {
+			//$route.reload();
+		}
 	});
 
 	$rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+		console.debug('success',arguments);
+		
+		if ($rootScope.spynav) {
+			$rootScope.naving = false;
+			return;
+		}
+
 		setTimeout(function() {
 			var hash = $location.$$path.replace('/','');
 			var el = $('#' + hash);
+
 			if (!el.length) {
 				return;
 			}
+
 			$('html, body').animate({
 				scrollTop: el.offset().top
-			}, 500);
+			}, animateTime);
+
+			setTimeout(function() {
+				$rootScope.$apply(function() {
+					$rootScope.naving = false;
+					$rootScope.spynav = false;
+				});
+			}, animateTime + 10);
 		},10);
-		//$anchorScroll(hash);
+
 	});
 });
 
