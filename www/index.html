@@ -231,7 +231,11 @@
 			<section class="news" id="news">
 				<div class="container">
 					<div class="feed-cards">
-						<div class="feed-card" ng-repeat="card in news | limitTo: 4">
+						<div class="twitter-timeline-wrap">
+							<a class="twitter-timeline" href="https://twitter.com/hashtag/aSolitaryMann" data-widget-id="654420032965881856">#aSolitaryMann Tweets</a>
+						</div>
+
+						<div class="feed-card" ng-repeat="card in news | limitTo: 5">
 							<span class="user">
 								<span class="avatar" style="background-image: url({{card.user.profile_picture}})"></span>
 								<span class="name">{{card.user.username}}</span>
@@ -244,6 +248,10 @@
 							</span>
 						</div>
 					</div>
+
+
+
+
 					<div class="divider"></div>
 				</div>
 			</section>
@@ -462,4 +470,21 @@
 	<script src="/parallax.min.js"></script>
 	<script src="/instafeed.min.js"></script>
 	<script src="/script.js"></script>
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 </html>
