@@ -341,6 +341,12 @@ b {
 	color: #4b4f54;
 }
 
+.feed-card .btn-link.ngTruncateToggleText {
+	text-transform: lowercase;
+	color: #125688;
+	cursor: pointer;
+}
+
 .feed-card .user .name {
 	vertical-align: top;
 	padding-left: .8em;
@@ -361,14 +367,12 @@ b {
 	background-size: cover;
 }
 
-
 .twitter-timeline-wrap {
 	width: 100%;
 	margin: 0 0 2em 0;
 }
 
 @media screen and (min-width: 481px) {
-
 	.ost a:hover {
 		border-bottom: 0;
 	}
@@ -420,7 +424,7 @@ b {
 	}
 
 	.news .container {
-		max-width: 90em;
+		max-width: 95em;
 	}
 }
 

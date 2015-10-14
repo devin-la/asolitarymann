@@ -231,11 +231,13 @@
 			<section class="news" id="news">
 				<div class="container">
 					<div class="feed-cards">
+
+
 						<div class="twitter-timeline-wrap">
-							<a class="twitter-timeline" href="https://twitter.com/hashtag/aSolitaryMann" data-widget-id="654420032965881856">#aSolitaryMann Tweets</a>
+							<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/e338" data-widget-id="654431932273397760">Tweets by @e338</a>
 						</div>
 
-						<div class="feed-card" ng-repeat="card in news | limitTo: 5">
+						<div class="feed-card" ng-repeat="card in news | limitTo: 7">
 							<span class="user">
 								<span class="avatar" style="background-image: url({{card.user.profile_picture}})"></span>
 								<span class="name">{{card.user.username}}</span>
@@ -243,10 +245,15 @@
 							<a href="{{card.link}}" target="_blank">
 								<span class="image" style="background-image: url({{card.images.standard_resolution.url}})"></span>
 							</a>
-							<span class="caption">
-								{{card.caption.text}}
+							<span class="caption" ng-text-truncate="card.caption.text" ng-tt-chars-threshold="200">
 							</span>
 						</div>
+
+						<div class="twitter-timeline-wrap">
+							<a class="twitter-timeline" href="https://twitter.com/hashtag/aSolitaryMann" data-widget-id="654420032965881856">#aSolitaryMann Tweets</a>
+						</div>
+
+
 					</div>
 
 
@@ -469,6 +476,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/0.7.3/angular-scroll.min.js"></script>
 	<script src="/parallax.min.js"></script>
 	<script src="/instafeed.min.js"></script>
+	<script src="/ng-text-truncate.js"></script>
 	<script src="/script.js"></script>
 
 <script>window.twttr = (function(d, s, id) {

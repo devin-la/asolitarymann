@@ -1,4 +1,4 @@
-var app = angular.module('asolitarymann', ['ngRoute', 'duScroll']);
+var app = angular.module('asolitarymann', ['ngRoute', 'duScroll', 'ngTextTruncate']);
 
 app.config(function($locationProvider, $routeProvider) {
 
