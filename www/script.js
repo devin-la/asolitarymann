@@ -38,7 +38,7 @@ app.controller('main', function($scope, $timeout, $http, $rootScope) {
 
 	$('.trailer').click(function() {
 		$(this).addClass('play');
-		$('#vimeo').attr('src','https://player.vimeo.com/video/124823784?autoplay=1'); 
+		$('#vimeo').attr('src','https://player.vimeo.com/video/124823784?autoplay=1');
 	});
 
 	var feed = new Instafeed({
@@ -53,11 +53,9 @@ app.controller('main', function($scope, $timeout, $http, $rootScope) {
 		}
 	});
 	feed.run();
-
-
 });
 
-app.run(function($rootScope, $location, $anchorScroll, $route, $timeout) {	
+app.run(function($rootScope, $location, $anchorScroll, $route, $timeout) {
 	var animateTime = 500;
 
 	$rootScope.$on('duScrollspy:becameActive', function($event, $element, $target){
