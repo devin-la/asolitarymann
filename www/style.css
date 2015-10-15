@@ -15,7 +15,7 @@ body {
 }
 
 .top .container {
-	max-width: 750px;
+	max-width: 820px;
 }
 
 .nav a {
@@ -645,6 +645,10 @@ b {
 	.top-social a {
 		color: #c8c6b1;
 		font-size: 2.5em;
-		padding: 1em;
+		padding: 0 1.2em 0 1.2em;
+	}
+
+	.top-social .container {
+		padding: 1.6em 0 1.6em 0;
 	}
 }
