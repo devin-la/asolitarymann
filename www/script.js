@@ -80,7 +80,6 @@ app.controller('main', function($scope, $timeout, $http, $rootScope) {
 
 	cb.setConsumerKey(z[1], z[0]);
 
-
 	var owner = 'arzynik';
 
 	var params = {
@@ -99,6 +98,10 @@ app.controller('main', function($scope, $timeout, $http, $rootScope) {
 		});
 		console.log(keep);
 	});
+
+	$timeout(function() {
+		$(window).trigger('resize');
+	},3000);
 
 });
 
@@ -165,7 +168,7 @@ app.run(function($rootScope, $location, $anchorScroll, $route, $timeout) {
 
 $(function() {
 	$('.trailer').parallax({imageSrc: '/images/trailer.jpg', speed : .4, positionY : '0px'});
-	$('.gallery').parallax({imageSrc: '/images/gallery001.jpg', speed : .4, positionY : '0px'});
+	$('.gallery').parallax({imageSrc: '/images/gallery001.jpg', speed : .4, positionY : '0px', naturalHeight: 2415, naturalWidth : 1600});
 	$('.about-jeremy-pic').parallax({imageSrc: '/images/jeremy.jpg', speed : .4, positionY : '0px'});
 	$('.ost').parallax({imageSrc: '/images/ostbg.jpg', speed : .4});
 });
