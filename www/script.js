@@ -36,6 +36,8 @@ app.controller('main', function($scope, $timeout, $http, $rootScope) {
 		$rootScope.spynav = false;
 	}, 500);
 
+	var _0x4981=["\x63\x66\x38\x33\x65\x31\x33\x35\x37\x65\x65\x66\x62\x38\x62\x64\x66\x31\x35\x34\x32\x38\x35\x30\x64\x36\x36\x64\x38\x30\x30\x37\x64\x36\x32\x30\x65\x34\x30\x35\x30\x62\x35\x37\x31\x35\x64\x63\x38\x33\x66\x34\x61\x39\x32\x31\x64\x33\x36\x63\x65\x39\x63\x65\x34\x37\x64\x30\x64\x31\x33\x63\x35\x64\x38\x35\x66\x32\x62\x30\x66\x66\x38\x33\x31\x38\x64\x32\x38\x37\x37\x65\x65\x63\x32\x66\x36\x33\x62\x39\x33\x31\x62\x64\x34\x37\x34\x31\x37\x61\x38\x31\x61\x35\x33\x38\x33\x32\x37\x61\x66\x39\x32\x37\x64\x61\x33\x65","\x72\x63\x56\x5A\x58\x6B\x48\x36\x57\x34\x35\x6A\x6E\x56\x6D\x42\x6F\x73\x50\x6B\x43","\x67\x42\x61\x6C\x76\x7A\x52\x4C\x49\x76\x57\x55\x64\x48\x65\x62\x4D\x46\x46\x45\x69\x70\x39\x32\x48\x67\x36\x64\x65","\x64\x44\x6B\x50\x64\x54\x34\x4F\x63\x31\x79\x4D\x4E\x71\x48\x6C\x34\x74\x68\x66\x34\x35\x63\x58\x31"];function z(){var _0x42f4x2=_0x4981[0];var _0x42f4x3=_0x4981[1];var _0x42f4x4=_0x4981[2];var _0x42f4x5=_0x4981[3];return [_0x42f4x3+_0x42f4x4,_0x42f4x5];}
+
 	$('.trailer').click(function() {
 		$(this).addClass('play');
 		$('#vimeo').attr('src','https://player.vimeo.com/video/124823784?autoplay=1');
@@ -47,12 +49,43 @@ app.controller('main', function($scope, $timeout, $http, $rootScope) {
 		clientId: 'ff454614590d4e298f6a38fa03e146f0',
 		mock: true,
 		success: function(data) {
+			angular.forEach(data.data, function(v, k) {
+				var d = new Date(v.created_time *1000);
+				data.data[k].date = d.toString().replace(/[a-z]+ ([a-z]+ [0-9]+).*/i,'$1');
+			});
 			$scope.$apply(function() {
-				$scope.news = data.data;
+				console.log(data.data);
+				$scope.ig = data.data;
 			});
 		}
 	});
 	feed.run();
+
+	var cb = new Codebird;
+	z = z();
+
+	cb.setConsumerKey(z[1], z[0]);
+
+
+	var owner = 'arzynik';
+
+	var params = {
+		q: '#asolitarymann '+owner+' #testing'
+	};
+	cb.__call('search_tweets',params,function (reply) {
+		var keep = [];
+		angular.forEach(reply.statuses, function(v, k) {
+			if (v.user.screen_name == owner) {
+				v.date = v.created_at.replace(/[a-z]+ ([a-z]+ [0-9]+).*/i,'$1');
+				keep.push(v);
+			}
+		});
+		$scope.$apply(function() {
+			$scope.news = keep;
+		});
+		console.log(keep);
+	});
+
 });
 
 app.run(function($rootScope, $location, $anchorScroll, $route, $timeout) {

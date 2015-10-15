@@ -335,6 +335,7 @@ b {
 .feed-card .user {
 	color: #125688;
 	padding-bottom: .6em;
+	display: flex;
 }
 
 .feed-card .caption {
@@ -347,15 +348,14 @@ b {
 	cursor: pointer;
 }
 
-.feed-card .user .name {
-	vertical-align: top;
-	padding-left: .8em;
+.feed-card .user .name, .feed-card .user .login {
+	display: block;
 }
 
 .feed-card .avatar {
 	border-radius: 10em;
 	height: 3em;
-	width: 3em;
+	width: 3.5em;
 	display: inline-block;
 	background-size: cover;
 }
@@ -371,6 +371,24 @@ b {
 	width: 100%;
 	margin: 0 0 2em 0;
 }
+
+.feed-card .name-group {
+	vertical-align: top;
+	padding-left: .8em;
+	display: inline-block;
+	width: 100%;
+}
+
+.feed-card .date {
+	float: right;
+	color: #666;
+}
+
+.feed-card.twitter .caption {
+	padding-top: 0;
+}
+
+
 
 @media screen and (min-width: 481px) {
 	.ost a:hover {

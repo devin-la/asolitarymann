@@ -2,12 +2,12 @@
 <!--
 
 
-     _            _                             _
-    | |          (_)                           | |
-  __| | _____   ___ _ __   __      ____ _ ___  | |__   ___ _ __ ___
- / _` |/ _ \ \ / / | '_ \  \ \ /\ / / _` / __| | '_ \ / _ \ '__/ _ \
+_            _                             _
+| |          (_)                           | |
+__| | _____   ___ _ __   __      ____ _ ___  | |__   ___ _ __ ___
+/ _` |/ _ \ \ / / | '_ \  \ \ /\ / / _` / __| | '_ \ / _ \ '__/ _ \
 | (_| |  __/\ V /| | | | |  \ V  V / (_| \__ \ | | | |  __/ | |  __/
- \__,_|\___| \_/ |_|_| |_|   \_/\_/ \__,_|___/ |_| |_|\___|_|  \___|
+\__,_|\___| \_/ |_|_| |_|   \_/\_/ \__,_|___/ |_| |_|\___|_|  \___|
 
 
 
@@ -61,14 +61,14 @@
 
 
 
- _     _   _              ____ _            _         _
+_     _   _              ____ _            _         _
 | |   | | | |       _    / / /| |          (_)       | |
 | |__ | |_| |_ _ __(_)  / / /_| | _____   ___ _ __   | | __ _
 | '_ \| __| __| '_ \   / / / _` |/ _ \ \ / / | '_ \  | |/ _` |
 | | | | |_| |_| |_) | / / / (_| |  __/\ V /| | | | |_| | (_| |
 |_| |_|\__|\__| .__(_)_/_/ \__,_|\___| \_/ |_|_| |_(_)_|\__,_|
-              | |
-              |_|
+| |
+|_|
 
 
 
@@ -232,15 +232,31 @@
 				<div class="container">
 					<div class="feed-cards">
 
-
-						<div class="twitter-timeline-wrap">
-							<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/e338" data-widget-id="654431932273397760">Tweets by @e338</a>
+						<div class="feed-card twitter" ng-repeat="card in news | limitTo: 2">
+							<span class="user">
+								<span class="avatar" style="background-image: url({{card.user.profile_image_url_https}})"></span>
+								<span class="name-group">
+									<span class="date">{{card.date}}</span>
+									<span class="name">{{card.user.name}}</span>
+									<span class="login">@{{card.user.screen_name}}</span>
+								</span>
+							</span>
+							<span class="caption" ng-text-truncate="card.text" ng-tt-chars-threshold="200">
+							</span>
 						</div>
 
-						<div class="feed-card" ng-repeat="card in news | limitTo: 7">
+
+						<!--div class="twitter-timeline-wrap">
+							<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/e338" data-widget-id="654431932273397760">Tweets by @e338</a>
+						</div-->
+
+						<div class="feed-card" ng-repeat="card in ig | limitTo: 7">
 							<span class="user">
 								<span class="avatar" style="background-image: url({{card.user.profile_picture}})"></span>
-								<span class="name">{{card.user.username}}</span>
+								<span class="name-group">
+									<span class="date">{{card.date}}</span>
+									<span class="name">{{card.user.username}}</span>
+								</span>
 							</span>
 							<a href="{{card.link}}" target="_blank">
 								<span class="image" style="background-image: url({{card.images.standard_resolution.url}})"></span>
@@ -252,8 +268,6 @@
 						<div class="twitter-timeline-wrap">
 							<a class="twitter-timeline" href="https://twitter.com/hashtag/aSolitaryMann" data-widget-id="654420032965881856">#aSolitaryMann Tweets</a>
 						</div>
-
-
 					</div>
 
 
@@ -477,22 +491,23 @@
 	<script src="/parallax.min.js"></script>
 	<script src="/instafeed.min.js"></script>
 	<script src="/ng-text-truncate.js"></script>
+	<script src="/codebird.js"></script>
 	<script src="/script.js"></script>
 
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
+	<script>window.twttr = (function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0],
+		t = window.twttr || {};
+	if (d.getElementById(id)) return t;
+	js = d.createElement(s);
+	js.id = id;
+	js.src = "https://platform.twitter.com/widgets.js";
+	fjs.parentNode.insertBefore(js, fjs);
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
+	t._e = [];
+	t.ready = function(f) {
+		t._e.push(f);
+	};
 
-  return t;
+	return t;
 }(document, "script", "twitter-wjs"));</script>
 </html>
