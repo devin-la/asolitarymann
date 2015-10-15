@@ -25,12 +25,10 @@ app.config(function($locationProvider, $routeProvider, $sceDelegateProvider) {
 		requireBase: true
 	});
 
-
 	$sceDelegateProvider.resourceUrlWhitelist([
 		'self',
 		'https://player.vimeo.com/video/**'
 	]);
-
 });
 
 app.controller('main', function($scope, $timeout, $http, $rootScope) {
@@ -68,7 +66,6 @@ app.controller('main', function($scope, $timeout, $http, $rootScope) {
 				data.data[k].date = d.toString().replace(/[a-z]+ ([a-z]+ [0-9]+).*/i,'$1');
 			});
 			$scope.$apply(function() {
-				console.log(data.data);
 				$scope.ig = data.data;
 			});
 		}
@@ -96,7 +93,6 @@ app.controller('main', function($scope, $timeout, $http, $rootScope) {
 		$scope.$apply(function() {
 			$scope.news = keep;
 		});
-		console.log(keep);
 	});
 
 	$timeout(function() {
