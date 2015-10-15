@@ -237,8 +237,8 @@
 								<span class="avatar" style="background-image: url({{card.user.profile_image_url_https}})"></span>
 								<span class="name-group">
 									<span class="date">{{card.date}}</span>
-									<span class="name">{{card.user.name}}</span>
-									<span class="login">@{{card.user.screen_name}}</span>
+									<a href="https://twitter.com/{{card.user.screen_name}}" target="_blank" class="name">{{card.user.name}}</a>
+									<a href="https://twitter.com/{{card.user.screen_name}}" target="_blank" class="login">@{{card.user.screen_name}}</a>
 								</span>
 							</span>
 							<span class="caption" ng-text-truncate="card.text" ng-tt-chars-threshold="200">
@@ -255,7 +255,7 @@
 								<span class="avatar" style="background-image: url({{card.user.profile_picture}})"></span>
 								<span class="name-group">
 									<span class="date">{{card.date}}</span>
-									<span class="name">{{card.user.username}}</span>
+									<a href="https://instagram.com/{{card.user.username}}" target="_blank" class="name">{{card.user.username}}</a>
 								</span>
 							</span>
 							<a href="{{card.link}}" target="_blank">

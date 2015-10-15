@@ -160,7 +160,6 @@ app.run(function($rootScope, $location, $anchorScroll, $route, $timeout) {
 				});
 			}, animateTime + 10);
 		},10);
-
 	});
 });
 

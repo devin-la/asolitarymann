@@ -79,39 +79,6 @@ body {
 	padding: 9em 0 9em 0;
 }
 
-.trailer {
-	padding: 2em 0 2em 0;
-	/*
-	background: #000 url(/images/trailer.jpg) top center no-repeat;
-	background-size:cover;
-	*/
-	text-align: center;
-}
-.trailer .vimeo {
-	width: 100%;
-}
-
-.trailer .button {
-	color: #fff;
-	font-size: 20em;
-	width: 200px;
-	margin: 0 auto;
-	cursor: pointer;
-	margin-top: .3em;
-}
-
-.trailer.play .button-wrap {
-	display: none;
-}
-
-.trailer .vimeo {
-	display: none;
-}
-
-.trailer.play .vimeo {
-	display: block;
-}
-
 .syn p, .about-jeremy-text p {
 	font-size: 1.9em;
 	line-height: 1.7em;
@@ -319,7 +286,7 @@ b {
 
 .feed-card {
 	background: #fff;
-	border-radius: 3px;
+	border-radius: 5px;
 	width: 100%;
 	display: inline-block;
 	margin: 0 0 2em 0;
@@ -336,6 +303,10 @@ b {
 	color: #125688;
 	padding-bottom: .6em;
 	display: flex;
+}
+
+.feed-card a.name, .feed-card a.login {
+	color: #125688;
 }
 
 .feed-card .caption {
@@ -388,7 +359,52 @@ b {
 	padding-top: 0;
 }
 
+.trailer .button-wrap {
+	width: 100%;
+	text-align: center;
+	display: table;
+	height: 100%;
+}
 
+.trailer .button {
+	font-size: 15em;
+	width: 100%;
+	margin: 0;
+	display: table-cell;
+	vertical-align: middle ;
+	text-align: center;
+}
+
+.trailer .vimeo {
+	width: 100%;
+	display: none;
+}
+
+.trailer .button {
+	color: #fff;
+	font-size: 15em;
+	width: 200px;
+	margin: 0 auto;
+	cursor: pointer;
+	margin-top: .3em;
+}
+
+.trailer.play .button-wrap {
+	display: none;
+}
+
+.trailer.play .vimeo {
+	display: block;
+}
+
+.trailer .container {
+	padding: 0;
+	height: 100%;
+}
+
+.trailer .video {
+	height: 100%;
+}
 
 @media screen and (min-width: 481px) {
 	.ost a:hover {
@@ -421,8 +437,9 @@ b {
 		height: 200vw;
 	}
 
-	.trailer {
-		height: 450px;
+	.trailer .container {
+		width:100%;
+		max-width: inherit;
 	}
 
 	.nav {
@@ -443,6 +460,10 @@ b {
 
 	.news .container {
 		max-width: 95em;
+	}
+
+	.trailer .vimeo, .trailer {
+		height: 44vw;
 	}
 }
 
@@ -589,37 +610,11 @@ b {
 		padding-top: 3em;
 	}
 
-	.trailer .button-wrap {
-		width: 100%;
-		text-align: center;
-		display: table;
-		height: 100%;
-	}
-
-	.trailer .button {
-		font-size: 15em;
-		width: 100%;
-		margin: 0;
-		display: table-cell;
-		vertical-align: middle ;
-		text-align: center;
-	}
-
 	.trailer {
-		height: 60vw;
 		padding: 0;
 	}
 
-	.trailer .vimeo {
+	.trailer .vimeo, .trailer {
 		height: 60vw;
-	}
-
-	.trailer .container {
-		padding: 0;
-		height: 100%;
-	}
-
-	.trailer .video {
-		height: 100%;
 	}
 }
