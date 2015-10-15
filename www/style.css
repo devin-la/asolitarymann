@@ -26,7 +26,8 @@ body {
 }
 
 .nav a:hover {
-	border-color: #0f0f0b;
+	border-color: #6b797d;
+	color: #6b797d;
 }
 
 .lightblue {
@@ -414,7 +415,7 @@ b {
 	a {
 		text-decoration: none;
 		border-bottom: 1px solid transparent;
-		transition: .4s all ease;
+		transition: .3s all ease;
 	}
 
 	a:hover {
@@ -464,6 +465,20 @@ b {
 
 	.trailer .vimeo, .trailer {
 		height: 44vw;
+	}
+
+	.social {
+		margin-top: 2em;
+	}
+	.nav .social a {
+		padding-right: .4em;
+		font-size: 2.1em;
+		color: #b2ece0;
+		border-bottom: none;
+	}
+	.nav .social a:hover {
+		border-bottom: none;
+		color: #69797c;
 	}
 }
 
