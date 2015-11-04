@@ -139,6 +139,7 @@ section {
 	background-size:cover;
 	*/
 	text-align: center;
+	transition: .4s all ease;
 }
 
 .divider {
@@ -651,4 +652,67 @@ b {
 	.top-social .container {
 		padding: 1.6em 0 1.6em 0;
 	}
+}
+
+.gallery:not(.faded) {
+	background: #000;
+}
+
+.gallery .image .img {
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.gallery .image .img, .gallery .image {
+	height: 90vh;
+}
+
+.rn-carousel-indicator {
+	font-size: 6em;
+	text-align: center;
+	opacity: .8;
+}
+
+.rn-carousel-indicators {
+	margin-bottom: 10em;
+}
+
+.rn-carousel-controls {
+	position: absolute;
+	margin-top: -40em;
+	display: none;
+}
+
+.rn-carousel-control {
+	position: relative;
+	top: auto;
+	font-size: 20em;
+	margin-top: -40em;
+	color: #fff;
+}
+
+.rn-carousel-control.rn-carousel-control-next, .rn-carousel-control.rn-carousel-control-prev {
+	right: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+}
+
+.gallery-carousel {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.gc-top, .gc-bottom {
+	display: table-row;
+}
+
+.gc-top {
+	height: 70%;
+}
+
+.gc-bottom {
+	padding-bottom: 20em;
 }

@@ -1,4 +1,4 @@
-var app = angular.module('asolitarymann', ['ngRoute', 'duScroll', 'ngTextTruncate']);
+var app = angular.module('asolitarymann', ['ngRoute', 'duScroll', 'ngTextTruncate', 'ngTouch', 'angular-carousel']);
 
 app.config(function($locationProvider, $routeProvider, $sceDelegateProvider) {
 
@@ -54,6 +54,8 @@ app.controller('main', function($scope, $timeout, $http, $rootScope) {
 		$scope.playing = true;
 		$scope.trailer += '?autoplay=1';
 	};
+
+	$scope.galleryImages = ['pixel.png','aSolitaryMann_promo_01.jpg', 'aSolitaryMann_promo_02.jpg', 'aSolitaryMann_promo_03.jpg', 'aSolitaryMann_promo_04.jpg', 'aSolitaryMann_promo_05.jpg', 'aSolitaryMann_promo_06.jpg', 'aSolitaryMann_promo_07_visualN2.jpg', 'aSolitaryMann_promo_08.jpg'];
 
 	var feed = new Instafeed({
 		get: 'tagged',
