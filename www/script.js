@@ -55,7 +55,7 @@ app.controller('main', function($scope, $timeout, $http, $rootScope) {
 		$scope.trailer += '?autoplay=1';
 	};
 
-	$scope.galleryImages = ['pixel.png','aSolitaryMann_promo_01.jpg', 'aSolitaryMann_promo_02.jpg', 'aSolitaryMann_promo_03.jpg', 'aSolitaryMann_promo_04.jpg', 'aSolitaryMann_promo_05.jpg', 'aSolitaryMann_promo_06.jpg', 'aSolitaryMann_promo_07_visualN2.jpg', 'aSolitaryMann_promo_08.jpg'];
+	$scope.galleryImages = ['pixel.png','aSolitaryMann_promo_01.jpg', 'aSolitaryMann_promo_02.jpg', 'aSolitaryMann_promo_03.jpg', 'aSolitaryMann_promo_04.jpg', 'aSolitaryMann_promo_05.jpg', 'aSolitaryMann_promo_06.jpg', 'aSolitaryMann_promo_07_visualN2.jpg', 'aSolitaryMann_promo_08.jpg', 'pixel.png '];
 
 	var feed = new Instafeed({
 		get: 'tagged',
@@ -106,12 +106,24 @@ app.controller('main', function($scope, $timeout, $http, $rootScope) {
 app.run(function($rootScope, $location, $anchorScroll, $route, $timeout) {
 	var animateTime = 500;
 
+	$(window).scroll(function() {
+		if ($rootScope.hash != 'gallery') {
+			return;
+		}
+		var margin = $(window).scrollTop() -  $('#gallery').position().top;
+		var max = $('#gallery').height()-$(window).height() - 80;
+		$('.gc-bottom').css('margin-top', margin > max ? max : margin);
+
+	})
+
 	$rootScope.$on('duScrollspy:becameActive', function($event, $element, $target){
 		var hash = $element.prop('hash').replace('#','');
 
 		if (hash == 'top') {
 			hash = '';
 		}
+
+		$rootScope.hash = hash;
 
 		if ($rootScope.naving) {
 			return;
@@ -125,10 +137,6 @@ app.run(function($rootScope, $location, $anchorScroll, $route, $timeout) {
 		$timeout(function() {
 			$rootScope.spynav = false;
 		},10);
-
-		if (!window.history || !history.replaceState) {
-			return;
-		}
 	});
 
 	$rootScope.$on('$routeChangeStart', function(e, current, next) {

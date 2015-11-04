@@ -298,14 +298,14 @@
 
 
 
-			<section class="gallery" id="gallery" ng-class="{faded: carouselIndex22 == 0}">
+			<section class="gallery" id="gallery" ng-class="{faded: carouselIndex22 == 0 || carouselIndex22 == galleryImages.length-1}">
 
 				<div class="gallery-carousel">
 					<div class="gc-top"></div>
 					<div class="gc-bottom">
 
 						<ul rn-carousel zrn-carousel-controls rn-carousel-buffered rn-carousel-index="carouselIndex22" class="image">
-							<li ng-repeat="image in galleryImages">
+							<li ng-repeat="image in galleryImages track by $index">
 								<div style="background-image:url(/images/{{image}})" class="img">
 							</li>
 						</ul>
