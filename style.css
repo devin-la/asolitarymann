@@ -30,11 +30,16 @@ body {
 	color: #6b797d;
 }
 
+.nav a.buy-film {
+	color: #b6231c;
+	border-bottom: 1px solid #b6231c;
+}
+
 .lightblue {
 	color: #b1ecdf;
 }
 
-.top {
+.top-wrap {
 	background: url(/images/top.jpg) top center no-repeat;
 	background-size: contain;
 	height: 60vw;
@@ -692,6 +697,11 @@ div.rn-carousel-indicator span.active {
 		color: #c8c6b1;
 	}
 
+	.nav a.buy-film {
+		color: #d43a34;
+		border-bottom: 1px solid #d43a34;
+	}
+
 	.top {
 		margin-top: 5em;
 	}
@@ -742,9 +752,27 @@ div.rn-carousel-indicator span.active {
 }
 
 .feed-cards {
-	
+
 }
 
 .press-kit {
 	display: none;
+}
+
+
+.top {
+	background: url(/images/bar.png) top center no-repeat;
+	background-size: cover;
+	height: 60vw;
+	max-height: 600px;
+}
+.bar {
+	background: url(/images/bar.png) top center no-repeat;
+	background-size: 80%;
+	height: 115px;
+	width: 2048px;
+	position: absolute;
+	margin-top: 380px;
+	margin-left: 80vw;
+	opacity: .9;
 }
